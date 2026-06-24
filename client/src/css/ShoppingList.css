@@ -1,0 +1,645 @@
+/* Light Mode */
+:root {
+  /* Background Colors */
+  --background-color: #f8f5f7;
+  --soft-pink-gray-bg: #f8f5f7;
+
+  /*PIE */
+  --pie-color-checked: #d3d3d3; 
+  --pie-color-unchecked: #ffcccb; 
+
+  /*Bar*/
+  --bar-light-bg1: #fae9ea; 
+  --bar-light-bg2: #c2bfc2; 
+
+  /* Text Colors */
+  --text-color: #514142;
+  --navbar-brand-color: #090303;
+
+  /* Card Colors */
+  --card-header-background-color: #fae9ea;
+  --card-background-color: #f8f5f5;
+  --card-text-color: #000000;
+
+  /*Items cards*/
+  --item-checked-bg: #c2bfc2; 
+  --item-unchecked-bg: #fae9ea;
+
+  /* Button Colors */
+  --button-background-color: #e3dcdd;
+  --button-text-color: #000000;
+  --delete-button-bg: #fae9ea;
+  --archive-button-bg: #e0d8da;
+  --activate-button-bg: #e0d8da;
+  --leave-button-bg: #fdf2f3;
+
+  /* Form Control Colors */
+  --form-control-bg: #ffffff;
+  --form-control-border: #4133ae;
+  --form-control-text: #000000;
+
+  /* Modal Colors */
+  --modal-primary-bg: #efd6d8;
+  --modal-primary-border: #c5c2c3;
+  --modal-primary-text: #020000;
+  --modal-secondary-bg: #d4d3d3;
+  --modal-secondary-border: #b8b8b8;
+  --modal-secondary-text: #020000;
+  --modal-bg-color: #fdfbfb;
+  --modal-overlay-bg: rgba(0, 0, 0, 0.5);
+  --modal-header-bg: #faeeef;
+  --modal-footer-bg: #fdfbfb;
+  --modal-text-color: #514142;
+  --modal-border-color: #e3dcdd;
+
+  --delete-button-text-color: #fff;
+
+  /* Transition */
+  --transition-duration: 0.3s;
+  --transition-timing: ease;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  /* Background Colors */
+  --background-color: #282838;
+  --soft-pink-gray-bg: #282838;
+
+  /*PIE*/
+  --pie-color-checked: #565168; 
+  --pie-color-unchecked: #756d91;
+
+  /*Bar*/
+  --bar-dark-bg1: #756d91;
+  --bar-dark-bg2: #565168;
+
+  /* Text Colors */
+  --text-color: #f8f3f3;
+  --navbar-brand-color: #e5d7f4;
+
+  /* Card Colors */
+  --card-header-background-color: #473e69 !important;
+  --card-background-color: #756d91 !important;
+  --card-text-color: #ffffff !important;
+
+  /*Items cards*/
+  --item-checked-bg: #565168; 
+  --item-unchecked-bg: #756d91;
+
+  /* Button Colors */
+  --button-background-color: #473e69;
+  --button-text-color: #dfdcdc;
+  --delete-button-bg: #473e69;
+  --archive-button-bg: #696087;
+  --activate-button-bg: #696087;
+  --leave-button-bg: #695f8b;
+
+  /* Form Control Colors */
+  --form-control-bg: #e5d7f4;
+  --form-control-border: #555555;
+  --form-control-text: #ffffff;
+
+  /* Modal Button Colors */
+  --modal-primary-bg: #4a4a4a !important;
+  --modal-primary-border: #555555 !important;
+  --modal-primary-text: #ffffff !important;
+  --modal-secondary-bg: #3a3a3a !important;
+  --modal-secondary-border: #444444!important;
+  --modal-secondary-text: #ffffff!important;
+  --modal-bg-color: #1d1b23!important;
+  --modal-overlay-bg: rgba(0, 0, 0, 0.8);
+  --modal-header-bg: #473e69;
+  --modal-footer: #1d1b23 !important;
+  --modal-text-color: #dfdcdc;
+  --modal-border-color: #696087;
+
+  /* Transition */
+  --transition-duration: 0.3s;
+  --transition-timing: ease;
+}
+/* Global Styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* Style for the Pie Chart canvas */
+.pie-chart {
+  transition: transform 0.2s ease-in-out; /* Animates scaling on hover */
+  width: 50%; /* Sets the width relative to the parent container */
+  height: auto; /* Keeps the height proportional to width */
+  max-width: 250px; /* Limits the maximum size */
+  aspect-ratio: 1; /* Ensures the aspect ratio remains 1:1 (circle) */
+  margin: auto;
+}
+
+.pie-chart:hover {
+  transform: scale(1.05); /* Slight hover */
+  
+}
+
+/* Colors for light mode */
+body.light-mode .pie-chart {
+  background-color: var(--item-unchecked-bg);
+  border: 2px solid var(--item-checked-bg);
+}
+
+/* Colors for dark mode */
+body.dark-mode .pie-chart {
+  background-color: var(--item-checked-bg);
+  border: 2px solid var(--item-unchecked-bg);
+}
+
+.pie-chart-container {
+  margin-top: 2rem;
+  padding: 1rem;  
+  border-radius: 8px;
+  background-color: var(--background-color);
+}
+
+/* Light mode Pie */
+.pie-chart-container {
+  --background-color: #f8f5f7;
+}
+
+/* Dark mode Pie*/
+[data-theme='dark'] .pie-chart-container {
+  --background-color: #282838;
+}
+
+.bar-chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+.bar-chart-container canvas {
+  background-color: transparent; 
+}
+
+/* Smooth transitions for elements */
+.main-content,
+.navbar,
+.card,
+.form-control,
+.button {
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--background-color);
+  border-bottom: 1px solid #e5d7f4;
+}
+
+.navbar-dark {
+  background-color: var(--background-color) !important;
+}
+
+.navbar-light {
+  background-color: var(--background-color) !important;
+}
+
+.navbar-brand {
+  color: var(--navbar-brand-color) !important;
+  transition: color var(--transition-duration) var(--transition-timing);
+  font-size: 1.5rem;
+  flex: 1; /* Allow it to take available space */
+  text-align: left;
+  margin-bottom: 10px; /* Add space for small screens */
+}
+
+.responsive-navbar {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing);
+}
+
+.soft-pink-gray {
+  flex: 1;
+  background-color: var(--soft-pink-gray-bg);
+  transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+/* General Button Styles */
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing);
+}
+
+/* Purple Button */
+.purple-button {
+  background-color: var(--button-background-color) !important;
+  color: var(--button-text-color) !important;
+  border-radius: 5px; /* Makes the button more rounded */
+  
+}
+
+/* Delete, Archive, Activate, Leave Buttons */
+.delete-button,
+.archive-button,
+.leave-button,
+.activate-button {
+  width: 50%;
+  padding: 10px 0;
+  border: #030303;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  background-color: var(--delete-button-bg) !important;
+  color: var(--button-text-color) !important;
+}
+
+.archive-button,
+.activate-button {
+  background-color: var(--archive-button-bg) !important;
+}
+
+.leave-button {
+  background-color: var(--leave-button-bg) !important;
+}
+
+/* Button Hover Effects */
+button:hover {
+  opacity: 0.8;
+}
+
+.item-checked {
+  background-color: var(--item-checked-bg);
+}
+
+.item-unchecked {
+  background-color: var(--item-unchecked-bg);
+}
+
+.shopping-items li {
+  transition: background-color var(--transition-duration) var(--transition-timing);
+  border-radius: 5px;
+}
+
+/* Form Control Styles */
+.form-control {
+  background-color: var(--form-control-bg);
+  color: var(--form-control-text);
+  border: 1px solid var(--form-control-border);
+  border-radius: 5px;
+  padding: 5px;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Search Input Specific */
+.search-input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--form-control-border); /* Use the form control border color */
+  background-color: var(--form-control-bg); /* Use the form control background color */ 
+  color: var(--form-control-text); /* Use the form control text color */ 
+  margin-right: 10px; /* Optional: if you want to maintain space to the right */ 
+  transition: background-color var(--transition-duration) var(--transition-timing), color var(--transition-duration) var(--transition-timing), 
+  border-color var(--transition-duration)
+}
+
+.search-input::placeholder { 
+  color: var(--form-control-text); opacity: 0.5; /* Adjust opacity as needed */
+}
+
+/* Dark Mode Search Input */
+/* Default styling for the search input */
+.search-input { 
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--form-control-border);
+  margin-right: 10px;
+  background-color: var(--form-control-bg);
+  color: var(--form-control-text);
+  flex-grow: 1; /* Allow input to expand */
+  max-width: 300px; /* Limit max width */
+  margin-right: 10px;
+}
+
+.search-form {
+  display: flex;
+  flex: 2; /* Allow it to take more space than the brand */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-switcher {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Dark mode styling for the search input */
+[data-theme="dark"] .search-input {
+  background-color: #756d91 !important; /* Force background color for dark mode */
+  color: #ffffff !important; /* Ensure text is visible */
+  border-color: #aba3e7; /* Update border color for dark mode */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* Card Styles */
+.card {
+  background-color: var(--card-background-color) !important;
+  color: var(--card-text-color) !important;
+  border: 1px solid var(--form-control-border);
+  border-radius: 8px;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+.card-header {
+  background-color: var(--card-header-background-color) !important;
+  color: var(--card-text-color)!important;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Dark mode styles for card */
+.dark-card {
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+  border: 1px solid #333333; /* Darker border for cards in dark mode */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode styles for list group item */
+.dark-list-group-item {
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+  border-color: #444444; /* Adjust list item border for dark mode */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Archived Card */
+.archived {
+  opacity: 0.5;
+}
+
+/* List Group Item Styles */
+.list-group-item {
+  background-color: var(--card-background-color) !important;
+  color: var(--card-text-color);
+  border: none;
+  padding: 10px;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing);
+}
+
+/* Completed Shopping Item */
+.shopping-item.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+/* Modal Styles */
+.modal-footer .btn-primary {
+  background-color: var(--modal-primary-bg) !important;
+  border-color: var(--modal-primary-border) !important;
+  color: var(--modal-primary-text) !important;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+.modal-footer .btn-secondary {
+  background-color: var(--modal-secondary-bg) !important;
+  border-color: var(--modal-secondary-border) !important;
+  color: var(--modal-secondary-text) !important;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-overlay-bg); /* Dimmed background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+/* Modal Header */
+.modal-header {
+  background-color: var(--modal-header-bg);
+  border-bottom: 1px solid var(--modal-border-color);
+  padding: 15px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+/* Modal Body */
+.modal-body {
+  background-color: var(--modal-bg-color);
+  color: var(--modal-text-color);
+  padding: 15px;
+  border-top: 1px solid var(--modal-border-color);
+  border-bottom: 1px solid var(--modal-border-color);
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing);
+}
+
+
+.modal-body input {
+  padding: 8px;
+  border: 1px solid var(--modal-border-color);
+  border-radius: 4px;
+  background-color: var(--modal-bg-color);
+  color: var(--modal-text-color);
+}
+
+.modal-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.modal-body li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+
+.modal-window {
+  background-color: var(--modal-bg-color); /* Modal background */
+  color: var(--modal-text-color); /* Modal text */
+  border: 1px solid var(--modal-border-color); /* Border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Inner spacing */
+  width: 90%; /* Adaptive width */
+  max-width: 400px; /* Max width */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.modal-close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--modal-text-color); /* Matches text color */
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.modal-close-button:hover {
+  opacity: 0.7;
+}
+
+
+.custom-modal button:hover {
+  opacity: 0.8;
+}
+
+.modal-footer {
+  background-color: var(--modal-bg-color) !important;
+  color: var(--modal-footer);
+  border-top: 1px solid var(--modal-border-color);
+  transition: background-color var(--transition-duration) var(--transition-timing), 
+              color var(--transition-duration) var(--transition-timing), 
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Button Styles in Footer */
+.modal-footer .btn {
+  background-color: var(--button-background-color) !important;
+  color: var(--button-text-color);
+  }
+
+.modal-footer .btn:hover {
+  background-color: var(--modal-primary-bg) !important;
+  color: var(--modal-primary-text);
+}
+
+
+/* Footer Styles */
+.list-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+  transition: border-color var(--transition-duration) var(--transition-timing);
+}
+
+[data-theme="dark"] .list-footer {
+  border-top: 1px solid #120101;
+}
+
+/* Add Item Section */
+.add-item-section input {
+  flex: 1;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: var(--form-control-bg);
+  color: var(--form-control-text);
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+.add-item-section button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  cursor: pointer;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing);
+}
+
+.add-item-section button:hover {
+  background-color: #122213;
+}
+
+/* Switch Button Styles */
+.form-check-input:checked {
+  background-color: var(--button-background-color) !important;
+  border-color: var(--button-background-color) !important;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(169, 149, 192, 0.25) !important;
+}
+
+input[type="checkbox"] {
+  accent-color: rgb(53, 50, 50);
+}
+
+/* Pen Icon Styles */
+.pen-icon {
+  color: #333333 !important;
+}
+
+[data-theme="dark"] .pen-icon {
+  color: #f2f0f0 !important;
+}
+
+/* Smooth Transitions */
+.main-content,
+.navbar,
+.card,
+.form-control,
+.button,
+.modal-footer .btn {
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Hover Effects for Buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Smooth Transition for Cards */
+.card {
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}

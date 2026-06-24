@@ -1,0 +1,191 @@
+[{
+  "_id": {
+    "$oid": "674c7fe798ad5b89232179a7"
+  },
+  "name": "Lidl Furt ",
+  "ownerId": {
+    "$oid": "674a17424578bceba5fc70fc"
+  },
+  "archived": false,
+  "items": [
+    {
+      "name": "Milk",
+      "checked": false,
+      "_id": {
+        "$oid": "674c7fe798ad5b89232179a8"
+      }
+    },
+    {
+      "name": "Potato",
+      "checked": false,
+      "_id": {
+        "$oid": "674c7fe798ad5b89232179a9"
+      }
+    },
+    {
+      "name": "Water",
+      "checked": true,
+      "_id": {
+        "$oid": "6765adaf9f78c56512adbb33"
+      }
+    },
+    {
+      "name": "pppp",
+      "checked": false,
+      "_id": {
+        "$oid": "67685c71ddaf5924d6302220"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-12-01T15:25:27.386Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T18:37:40.450Z"
+  },
+  "__v": 39,
+  "membersId": [
+    {
+      "$oid": "674b0653c345c96c99ba93a6"
+    },
+    {
+      "$oid": "674a18d34578bceba5fc7100"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "674c898a2808cce6fc5355c1"
+  },
+  "name": "Norma2",
+  "ownerId": {
+    "$oid": "674a17424578bceba5fc70fc"
+  },
+  "archived": false,
+  "items": [
+    {
+      "name": "Watermelon",
+      "checked": true,
+      "_id": {
+        "$oid": "6765c0ae2d1fcfdcb55decb9"
+      }
+    },
+    {
+      "name": "GummyBear",
+      "checked": true,
+      "_id": {
+        "$oid": "6765c0bd2d1fcfdcb55decbf"
+      }
+    },
+    {
+      "name": "Ball",
+      "checked": false,
+      "_id": {
+        "$oid": "6765c271285c7003bf232ec7"
+      }
+    },
+    {
+      "name": "Bread",
+      "checked": true,
+      "_id": {
+        "$oid": "6765c453285c7003bf232f0c"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-12-01T16:06:34.630Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T18:30:00.042Z"
+  },
+  "__v": 10
+},
+{
+  "_id": {
+    "$oid": "675ad16eb61d9df9c213d159"
+  },
+  "name": "dm",
+  "ownerId": {
+    "$oid": "674a17424578bceba5fc70fc"
+  },
+  "archived": false,
+  "membersId": [],
+  "items": [
+    {
+      "name": "Patifu",
+      "checked": false,
+      "_id": {
+        "$oid": "6765bf0e2d1fcfdcb55deb30"
+      }
+    },
+    {
+      "name": "MandlMehl",
+      "checked": true,
+      "_id": {
+        "$oid": "6765bf1c2d1fcfdcb55deb34"
+      }
+    },
+    {
+      "name": "Wasser",
+      "checked": true,
+      "_id": {
+        "$oid": "6765bf242d1fcfdcb55deb39"
+      }
+    },
+    {
+      "name": "Dushgel",
+      "checked": false,
+      "_id": {
+        "$oid": "6765bf352d1fcfdcb55deb3f"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-12-12T12:05:02.733Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-21T11:09:18.855Z"
+  },
+  "__v": 9
+},
+{
+  "_id": {
+    "$oid": "67684840ddaf5924d6301f78"
+  },
+  "name": "Pepuv seznam",
+  "ownerId": {
+    "$oid": "674b0653c345c96c99ba93a6"
+  },
+  "archived": false,
+  "membersId": [],
+  "items": [
+    {
+      "name": "Voda",
+      "checked": false,
+      "_id": {
+        "$oid": "67684840ddaf5924d6301f79"
+      }
+    },
+    {
+      "name": "Chleb",
+      "checked": false,
+      "_id": {
+        "$oid": "67684840ddaf5924d6301f7a"
+      }
+    },
+    {
+      "name": "Rajce",
+      "checked": false,
+      "_id": {
+        "$oid": "67684840ddaf5924d6301f7b"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-12-22T17:11:28.486Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T17:11:28.486Z"
+  },
+  "__v": 0
+}]

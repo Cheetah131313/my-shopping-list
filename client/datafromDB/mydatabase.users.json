@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "674a17424578bceba5fc70fc"
+  },
+  "name": "Annna",
+  "email": "anna@someemail.com",
+  "password": "securepassword123",
+  "createdAt": {
+    "$date": "2024-11-29T19:34:26.605Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-29T19:34:26.605Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674a18d34578bceba5fc7100"
+  },
+  "name": "Adam",
+  "email": "adam@someemail.com",
+  "password": "securepassword1234",
+  "createdAt": {
+    "$date": "2024-11-29T19:41:07.356Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-29T19:41:07.356Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b0653c345c96c99ba93a6"
+  },
+  "name": "Pepa",
+  "email": "josef@someemail.com",
+  "password": "password1234",
+  "createdAt": {
+    "$date": "2024-11-30T12:34:27.368Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-30T12:34:27.368Z"
+  },
+  "__v": 0
+}]
