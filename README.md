@@ -4,7 +4,6 @@ Webová aplikace pro správu nákupních seznamů s ukázkou uživatelských ú�
 
 ## Live Demo
 
-(doplníme po nasazení)
 
 ## Funkce
 
