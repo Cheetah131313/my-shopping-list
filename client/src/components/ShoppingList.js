@@ -72,7 +72,7 @@ function ShoppingList({
     }; 
       
       fetchShoppingLists();
-}, [setShoppingLists]);
+}, [setShoppingLists, t]);
 
 
 const fakeOptions = {
