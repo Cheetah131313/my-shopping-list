@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const fetchShoppingLists = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/shopping-lists');
+        const response = await axios.get('http://my-shopping-list-omti.onrender.com/shopping-lists');
         console.log('Fetched Shopping Lists:', response.data);
         setShoppingLists(response.data.shoppingLists); // Assuming your response has shoppingLists key
         setLoading(false); // Set loading to false after fetching
@@ -32,7 +32,7 @@ function App() {
 
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/users'); // Backend endpoint
+        const response = await axios.get('http://my-shopping-list-omti.onrender.com/users'); // Backend endpoint
         setUsers(response.data); // Set users from the response
         setCurrentUser(response.data[0]); // Initialize currentUser with the first user
       } catch (error) {
@@ -160,85 +160,3 @@ function App() {
 }
 
 export default App;
-
-
-// import React, { useEffect, useState } from 'react';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import ListDetails from './components/ListDetails';
-// import ShoppingList from './components/ShoppingList';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import axios from 'axios';
-
-// function App() {
-//   const [currentUser, setCurrentUser] = useState(null); 
-//   const [searchQuery, setSearchQuery] = useState(""); // State to manage search input
-//   const [shoppingLists, setShoppingLists] = useState([]); // State to manage shopping lists
-//   const [users, setUsers] = useState([]);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const fetchShoppingLists = async () => { 
-//       try { 
-//         const response = await axios.get('http://localhost:5000/shopping-lists'); 
-//         console.log("Fetched Shopping Lists:", response.data);
-//         setShoppingLists(response.data.shoppingLists); // Assuming your response has shoppingLists key 
-//         setLoading(false); // Set loading to false after fetching 
-//       } catch (error) { 
-//         console.error("Error fetching shopping lists:", error); 
-//       } 
-//     };
-
-//     const fetchUsers = async () => {
-//       try {
-//         const response = await axios.get('http://localhost:5000/users'); // Backend endpoint
-//         setUsers(response.data); // Set users from the response
-//         setCurrentUser(response.data[0]); // Initialize currentUser with the first user
-//       } catch (error) {
-//         console.error("Error fetching users:", error);
-//       }
-//     };
-
-//     fetchShoppingLists();
-//     fetchUsers();
-//   }, []);
-
-//   // Function to switch current user
-//   const switchUser = (userId) => {
-//     const selectedUser = users.find((user) => user._id === userId);
-//     if (selectedUser) {
-//       setCurrentUser(selectedUser);
-//     }
-//   };
-
-//   // Handle search input change
-//   const handleSearchChange = (event) => {
-//     setSearchQuery(event.target.value);
-//   };
-
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route
-//           path="/"
-//           element={
-//             currentUser && (
-//             <ShoppingList
-//               shoppingLists={shoppingLists}
-//               setShoppingLists={setShoppingLists} // Pass the setter function to update lists
-//               currentUser={currentUser}
-//               users={users}
-//               switchUser={switchUser}
-//               searchQuery={searchQuery}
-//               handleSearchChange={handleSearchChange}
-//               loading={loading}
-//             />
-//           )
-//           }
-//         />
-//         <Route path="/list/:id" element={<ListDetails />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
-
-// export default App;

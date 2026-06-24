@@ -28,7 +28,7 @@ function ListDetails() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/users'); 
+        const response = await axios.get('http://my-shopping-list-omti.onrender.com/users'); 
         setUsers(response.data);
 
         // Simulate selecting the current user (hardcoded or stored)
@@ -46,7 +46,7 @@ function ListDetails() {
   useEffect(() => {
     const fetchShoppingList = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/shopping-lists/${id}`);
+        const response = await axios.get(`http://my-shopping-list-omti.onrender.com/shopping-lists/${id}`);
         const shoppingList = response.data;
         setList(shoppingList);
         setItems(shoppingList.items || []);
@@ -100,7 +100,7 @@ function ListDetails() {
     const itemToToggle = items.find(item => item._id === itemId);
     if (!itemToToggle) return;
 
-    const response = await axios.patch(`http://localhost:5000/shopping-lists/${id}/items/${itemId}`, {
+    const response = await axios.patch(`http://my-shopping-list-omti.onrender.com/shopping-lists/${id}/items/${itemId}`, {
       checked: !itemToToggle.checked
     });
 
@@ -127,7 +127,7 @@ function ListDetails() {
       return;
     }
     try {
-      const response = await axios.put(`http://localhost:5000/shopping-lists/${id}`, {
+      const response = await axios.put(`http://my-shopping-list-omti.onrender.com/shopping-lists/${id}`, {
         name: newListName
       });
   
@@ -156,7 +156,7 @@ function ListDetails() {
     if (newItemName.trim() === '') return;
   
     try {
-      const response = await axios.post(`http://localhost:5000/shopping-lists/${id}/items`, {
+      const response = await axios.post(`http://my-shopping-list-omti.onrender.com/shopping-lists/${id}/items`, {
         name: newItemName,
         checked: false
       });
@@ -176,7 +176,7 @@ function ListDetails() {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/shopping-lists/${id}/items/${itemId}`);
+      await axios.delete(`http://my-shopping-list-omti.onrender.com/shopping-lists/${id}/items/${itemId}`);
   
       setItems(prevItems => prevItems.filter((item) => item._id !== itemId));
     } catch (error) {
