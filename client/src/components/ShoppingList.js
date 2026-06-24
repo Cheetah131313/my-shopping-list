@@ -44,7 +44,7 @@ function ShoppingList({
   useEffect(() => { 
     const fetchShoppingLists = async () => { 
       try { 
-        const response = await axios.get('http://my-shopping-list-omti.onrender.com/shopping-lists'); 
+        const response = await axios.get('https://my-shopping-list-omti.onrender.com/shopping-lists'); 
         const lists = response.data.shoppingLists;
         setShoppingLists(lists);
 
@@ -120,7 +120,7 @@ const fakeOptions = {
     console.log('Payload sent to backend:', newList); // Debug payload
 
     try { 
-      const response = await axios.post('http://my-shopping-list-omti.onrender.com/shopping-lists', newList); 
+      const response = await axios.post('https://my-shopping-list-omti.onrender.com/shopping-lists', newList); 
       const createdList = response.data;
 
     setNewLists((prevLists) => [...prevLists, createdList]);
@@ -182,7 +182,7 @@ const fakeOptions = {
   
   const confirmDeleteList = async () => {
     try {
-      await axios.delete(`http://my-shopping-list-omti.onrender.com/shopping-lists/${listToDelete}`);
+      await axios.delete(`https://my-shopping-list-omti.onrender.com/shopping-lists/${listToDelete}`);
   
       // Update the lists state to remove the deleted list
       setShoppingLists((prevLists) => prevLists.filter((list) => list._id !== listToDelete));
@@ -207,7 +207,7 @@ const handleLeaveList = (listId) => {
 
 const confirmLeaveList = async () => {
   try {
-    await axios.put(`http://my-shopping-list-omti.onrender.com/shopping-lists/${listToLeave}/remove-member`, {
+    await axios.put(`https://my-shopping-list-omti.onrender.com/shopping-lists/${listToLeave}/remove-member`, {
       memberId: currentUser._id
     });
 
@@ -225,7 +225,7 @@ const confirmLeaveList = async () => {
   // Function to archiving/activate a list 
   const toggleArchiveList = async (listId, isArchived) => {
     try {
-      const response = await axios.put(`http://my-shopping-list-omti.onrender.com/shopping-lists/archive/${listId}`, {
+      const response = await axios.put(`https://my-shopping-list-omti.onrender.com/shopping-lists/archive/${listId}`, {
         archived: !isArchived
       });
   

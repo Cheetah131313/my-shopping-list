@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const fetchShoppingLists = async () => {
       try {
-        const response = await axios.get('http://my-shopping-list-omti.onrender.com/shopping-lists');
+        const response = await axios.get('https://my-shopping-list-omti.onrender.com/shopping-lists');
         console.log('Fetched Shopping Lists:', response.data);
         setShoppingLists(response.data.shoppingLists); // Assuming your response has shoppingLists key
         setLoading(false); // Set loading to false after fetching
@@ -32,7 +32,7 @@ function App() {
 
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://my-shopping-list-omti.onrender.com/users'); // Backend endpoint
+        const response = await axios.get('https://my-shopping-list-omti.onrender.com/users'); // Backend endpoint
         setUsers(response.data); // Set users from the response
         setCurrentUser(response.data[0]); // Initialize currentUser with the first user
       } catch (error) {
