@@ -4,6 +4,7 @@ Webová aplikace pro správu nákupních seznamů s podporou více uživatelů, 
 
 ## Live Demo
 
+https://my-shopping-list-ghmvhivge-anastasie.vercel.app/
 
 ## Funkce
 
