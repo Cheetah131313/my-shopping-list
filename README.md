@@ -6,6 +6,9 @@ Webová aplikace pro správu nákupních seznamů s podporou více uživatelů, 
 
 https://my-shopping-list-ghmvhivge-anastasie.vercel.app/
 
+**Poznámka:** Aplikace využívají bezplatný hosting Render. Při první návštěvě může spuštění backendu a navázání spojení s databází trvat přibližně **30–60 sekund**. Po načtení již aplikace funguje standardně.
+
+
 ## Funkce
 
 * vytváření a správa nákupních seznamů
